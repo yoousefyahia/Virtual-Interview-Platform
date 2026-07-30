@@ -74,8 +74,8 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-  <footer className="border-y border-primary-500 bg-background">
-        <div className="container py-10">
+    <footer className="bg-background">        
+      <div className="container border-t border-primary py-10">
         <div className="flex flex-col gap-16 lg:flex-row lg:justify-between">
           {/* Logo */}
           <Link href="/" className="shrink-0">
@@ -87,7 +87,7 @@ export default function Footer() {
           </Link>
 
           {/* Links */}
-          <div className="grid flex-1 grid-cols-2 gap-10 md:grid-cols-4">
+          <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-10">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
                 <h4 className="mb-4 text-body-sm-semibold uppercase text-primary">
@@ -117,7 +117,7 @@ export default function Footer() {
 
               <a
                 href="mailto:info@vuplatform.com"
-                className="text-body-sm text-muted-foreground transition-default hover:text-primary"
+                className="text-body-sm text-muted-foreground transition-default hover:text-primary break-all"
               >
                 INFO@VUPLATFORM.COM
               </a>
