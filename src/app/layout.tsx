@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SignUp",
-  description: "Create your account",
+  title: "Virtual Interview Platform",
+  description: "Virtual Interview Platform",
 };
 
 export default function RootLayout({
@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} font-sans`}>{children}</body>
+      <body className={`${inter.className} font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }

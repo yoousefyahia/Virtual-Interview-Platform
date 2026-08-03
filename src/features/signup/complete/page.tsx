@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AuthCard, AuthHeader, HiringPanel } from "@/components/auth/AuthShell";
-import { SignupProgress } from "@/components/auth/SignupProgress";
+import { SignupProgress } from "@/features/signup/components/SignupProgress";
 import styles from "@/components/auth/auth.module.css";
 export default function SignupCompletePage() {
   return (

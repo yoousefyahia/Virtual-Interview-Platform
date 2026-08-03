@@ -6,7 +6,7 @@ import {
   HiringPanel,
   PrimaryButton,
 } from "@/components/auth/AuthShell";
-import { SignupProgress } from "@/components/auth/SignupProgress";
+import { SignupProgress } from "@/features/signup/components/SignupProgress";
 import styles from "@/components/auth/auth.module.css";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
