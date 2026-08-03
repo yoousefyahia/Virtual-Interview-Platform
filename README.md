@@ -159,24 +159,31 @@ src/
 └── middleware.ts
 
 
-Routing
-Public Pages
-Route	Description
-/	Home Page
-/about	About Platform
-/cases	Case Studies
-/pricing	Pricing Plans
-/pricing/confirm	Confirm Selected Plan
-/pricing/payment	Stripe Payment
-Authentication
-Route	Description
-/auth/login	Login
-/auth/signup	Create Account
-/auth/signup/company	Company Information
-/auth/signup/complete	Registration Completed
-/auth/forgot-password	Forgot Password
-/auth/verify-email	Verify Email
-/auth/reset-password	Reset Password
+## Routing
+
+### Public Pages
+
+| Route              | Description                        |
+| :----------------- | :--------------------------------- |
+| `/`                | Home page                          |
+| `/about`           | About the platform                 |
+| `/cases`           | Case studies and success stories   |
+| `/pricing`         | Pricing plans                      |
+| `/pricing/confirm` | Confirm selected subscription plan |
+| `/pricing/payment` | Complete payment using Stripe      |
+
+### Authentication
+
+| Route                   | Description                                   |
+| :---------------------- | :-------------------------------------------- |
+| `/auth/login`           | User login                                    |
+| `/auth/signup`          | Create a new account                          |
+| `/auth/signup/company`  | Enter company information during registration |
+| `/auth/signup/complete` | Registration completed successfully           |
+| `/auth/forgot-password` | Request a password reset                      |
+| `/auth/verify-email`    | Verify email address                          |
+| `/auth/reset-password`  | Set a new password                            |
+
 ## Architecture
 
 The project follows a **Feature-Based Architecture**.
