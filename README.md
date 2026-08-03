@@ -6,43 +6,49 @@ https://www.figma.com/design/dqw7PSvbH5A8GF5DT5EQ0N/VU-Platform?node-id=65-2&t=3
 src/
 │
 ├── app/
-│   ├── layout.tsx
-│   ├── page.tsx                         # Home (/)
+│   ├── layout.tsx                     # Root Layout (globals, fonts, providers)
 │   ├── loading.tsx
 │   ├── not-found.tsx
 │   │
-│   ├── about/
-│   │   └── page.tsx
-│   │
-│   ├── pricing/
-│   │   ├── page.tsx
-│   │   ├── confirm/
+│   ├── (public)/
+│   │   ├── layout.tsx                 # Navbar + Footer
+│   │   ├── page.tsx                   # Home (/)
+│   │   │
+│   │   ├── about/
 │   │   │   └── page.tsx
-│   │   └── payment/
+│   │   │
+│   │   ├── pricing/
+│   │   │   ├── page.tsx
+│   │   │   ├── confirm/
+│   │   │   │   └── page.tsx
+│   │   │   └── payment/
+│   │   │       └── page.tsx
+│   │   │
+│   │   └── cases/
 │   │       └── page.tsx
 │   │
-│   ├── cases/
-│   │   └── page.tsx
-│   │
-│   └── auth/
-│       ├── login/
-│       │   └── page.tsx
+│   └── (auth)/
+│       ├── layout.tsx                 # بدون Navbar و Footer
 │       │
-│       ├── signup/
-│       │   ├── page.tsx
-│       │   ├── company/
-│       │   │   └── page.tsx
-│       │   └── complete/
-│       │       └── page.tsx
-│       │
-│       ├── forgot-password/
-│       │   └── page.tsx
-│       │
-│       ├── verify-email/
-│       │   └── page.tsx
-│       │
-│       └── reset-password/
-│           └── page.tsx
+│       └── auth/
+│           ├── login/
+│           │   └── page.tsx
+│           │
+│           ├── signup/
+│           │   ├── page.tsx
+│           │   ├── company/
+│           │   │   └── page.tsx
+│           │   └── complete/
+│           │       └── page.tsx
+│           │
+│           ├── forgot-password/
+│           │   └── page.tsx
+│           │
+│           ├── verify-email/
+│           │   └── page.tsx
+│           │
+│           └── reset-password/
+│               └── page.tsx
 │
 ├── features/
 │   │
@@ -151,7 +157,6 @@ src/
 │   └── images/
 │
 └── middleware.ts
-```
 
 ## Architecture
 
