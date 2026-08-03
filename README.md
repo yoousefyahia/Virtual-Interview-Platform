@@ -158,6 +158,25 @@ src/
 │
 └── middleware.ts
 
+
+Routing
+Public Pages
+Route	Description
+/	Home Page
+/about	About Platform
+/cases	Case Studies
+/pricing	Pricing Plans
+/pricing/confirm	Confirm Selected Plan
+/pricing/payment	Stripe Payment
+Authentication
+Route	Description
+/auth/login	Login
+/auth/signup	Create Account
+/auth/signup/company	Company Information
+/auth/signup/complete	Registration Completed
+/auth/forgot-password	Forgot Password
+/auth/verify-email	Verify Email
+/auth/reset-password	Reset Password
 ## Architecture
 
 The project follows a **Feature-Based Architecture**.
