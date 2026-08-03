@@ -5,9 +5,9 @@ import {
   AuthField,
   HiringPanel,
   PrimaryButton,
-} from "@/components/auth/AuthShell";
+} from "@/features/signup/components/AuthShell";
 import { SignupProgress } from "@/features/signup/components/SignupProgress";
-import styles from "@/components/auth/auth.module.css";
+import styles from "@/features/signup/components/auth.module.css";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";

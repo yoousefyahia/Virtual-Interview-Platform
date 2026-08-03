@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AuthBrand } from "../../features/signup/components/AuthBrand";
+import { AuthBrand } from "@/features/signup/components/AuthBrand";
 import styles from "./auth.module.css";
 
 export function AuthHeader({

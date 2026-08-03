@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { AuthField, PrimaryButton } from "@/components/auth/AuthShell";
+import { AuthField, PrimaryButton } from "@/features/signup/components/AuthShell";
 import styles from "@/components/auth/auth.module.css";
 import { useRouter } from "next/navigation";
 

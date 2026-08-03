@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Globe, Menu } from "lucide-react";
 import Image from "next/image";
-
+import { US, EG } from "country-flag-icons/react/3x2";
 import logo from "@/assets/logo/Logo.svg";
 import { cn } from "@/lib/utils";
 
@@ -111,11 +111,14 @@ export default function Navbar() {
                 <ChevronDown className="size-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>
-                  English
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <US className="h-4 w-6 rounded-sm" />
+                  <span>English</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  العربية
+
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <EG className="h-4 w-6 rounded-sm" />
+                  <span>Arabic</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -188,12 +191,15 @@ export default function Navbar() {
                       <ChevronDown className="size-4" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuItem>
-                        English
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        العربية
-                      </DropdownMenuItem>
+                        <DropdownMenuItem className="flex items-center gap-2">
+                            <US className="h-4 w-6 rounded-sm" />
+                            <span>English</span>
+                          </DropdownMenuItem>
+
+                          <DropdownMenuItem className="flex items-center gap-2">
+                            <EG className="h-4 w-6 rounded-sm" />
+                            <span>Arabic</span>
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                   <Button
