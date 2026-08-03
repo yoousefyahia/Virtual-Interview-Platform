@@ -28,7 +28,7 @@ src/
 │   │       └── page.tsx
 │   │
 │   └── (auth)/
-│       ├── layout.tsx                 # بدون Navbar و Footer
+│       ├── layout.tsx                 # without Navbar و Footer
 │       │
 │       └── auth/
 │           ├── login/
