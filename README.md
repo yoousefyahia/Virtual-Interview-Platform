@@ -1,9 +1,13 @@
 https://www.figma.com/design/dqw7PSvbH5A8GF5DT5EQ0N/VU-Platform?node-id=65-2&t=36KUfy3ZOJfUx0E0-1
+
+# Project Structure
+
+```text
 src/
 │
 ├── app/
 │   ├── layout.tsx
-│   ├── page.tsx                         // Home (/)
+│   ├── page.tsx                         # Home (/)
 │   ├── loading.tsx
 │   ├── not-found.tsx
 │   │
@@ -44,13 +48,6 @@ src/
 │   │
 │   ├── home/
 │   │   ├── components/
-│   │   │   ├── HeroSection.tsx
-│   │   │   ├── AboutSection.tsx
-│   │   │   ├── PricingPreview.tsx
-│   │   │   ├── CasesPreview.tsx
-│   │   │   ├── CTASection.tsx
-│   │   │   └── FAQSection.tsx
-│   │   │
 │   │   ├── hooks/
 │   │   ├── services/
 │   │   ├── types/
@@ -66,17 +63,10 @@ src/
 │   │
 │   ├── pricing/
 │   │   ├── components/
-│   │   │   ├── PricingCard.tsx
-│   │   │   ├── PlanCard.tsx
-│   │   │   ├── FeatureList.tsx
-│   │   │   ├── BillingToggle.tsx
-│   │   │   ├── ConfirmCard.tsx
-│   │   │   └── PaymentSummary.tsx
-│   │   │
 │   │   ├── hooks/
 │   │   ├── services/
-│   │   ├── types/
 │   │   ├── validation/
+│   │   ├── types/
 │   │   ├── constants/
 │   │   ├── PricingPage.tsx
 │   │   ├── ConfirmUpgradePage.tsx
@@ -84,46 +74,16 @@ src/
 │   │
 │   ├── auth/
 │   │   ├── components/
-│   │   │   ├── LoginForm.tsx
-│   │   │   ├── SignupForm.tsx
-│   │   │   ├── CompanyForm.tsx
-│   │   │   ├── ForgotPasswordForm.tsx
-│   │   │   ├── ResetPasswordForm.tsx
-│   │   │   ├── VerifyEmailCard.tsx
-│   │   │   └── OTPInput.tsx
-│   │   │
 │   │   ├── hooks/
-│   │   │   ├── useLogin.ts
-│   │   │   ├── useSignup.ts
-│   │   │   └── useResetPassword.ts
-│   │   │
 │   │   ├── services/
-│   │   │   └── auth.api.ts
-│   │   │
 │   │   ├── validation/
-│   │   │   ├── login.schema.ts
-│   │   │   ├── signup.schema.ts
-│   │   │   └── reset-password.schema.ts
-│   │   │
 │   │   ├── types/
 │   │   ├── constants/
-│   │   │
 │   │   ├── login/
-│   │   │   └── LoginPage.tsx
-│   │   │
 │   │   ├── signup/
-│   │   │   ├── SignupPage.tsx
-│   │   │   ├── CompanyPage.tsx
-│   │   │   └── CompletePage.tsx
-│   │   │
 │   │   ├── forgot-password/
-│   │   │   └── ForgotPasswordPage.tsx
-│   │   │
 │   │   ├── verify-email/
-│   │   │   └── VerifyEmailPage.tsx
-│   │   │
 │   │   └── reset-password/
-│   │       └── ResetPasswordPage.tsx
 │   │
 │   └── cases/
 │       ├── components/
@@ -140,26 +100,21 @@ src/
 │   │   └── Container.tsx
 │   │
 │   ├── shared/
-│   │   ├── Logo.tsx
 │   │   ├── Loader.tsx
-│   │   ├── EmptyState.tsx
-│   │   └── ErrorState.tsx
+│   │   ├── ErrorState.tsx
+│   │   └── EmptyState.tsx
 │   │
 │   └── ui/
 │       ├── button.tsx
 │       ├── input.tsx
+│       ├── card.tsx
 │       ├── dialog.tsx
 │       ├── dropdown-menu.tsx
-│       ├── sheet.tsx
 │       ├── navigation-menu.tsx
-│       ├── form.tsx
-│       ├── textarea.tsx
-│       ├── checkbox.tsx
-│       ├── radio-group.tsx
+│       ├── sheet.tsx
 │       ├── select.tsx
-│       ├── badge.tsx
-│       ├── avatar.tsx
-│       ├── card.tsx
+│       ├── checkbox.tsx
+│       ├── textarea.tsx
 │       ├── separator.tsx
 │       ├── skeleton.tsx
 │       └── ...
@@ -168,8 +123,7 @@ src/
 │   ├── axios.ts
 │   ├── query-client.ts
 │   ├── stripe.ts
-│   ├── utils.ts
-│   └── validators.ts
+│   └── utils.ts
 │
 ├── hooks/
 │   ├── useDebounce.ts
@@ -186,12 +140,31 @@ src/
 │   └── index.ts
 │
 ├── types/
+│   ├── api.ts
 │   ├── auth.ts
-│   ├── pricing.ts
 │   ├── common.ts
-│   └── api.ts
+│   └── pricing.ts
 │
 ├── assets/
-│   ├── images/
+│   ├── fonts/
 │   ├── icons/
-│   └── fonts/
+│   └── images/
+│
+└── middleware.ts
+```
+
+## Architecture
+
+The project follows a **Feature-Based Architecture**.
+
+- **app/** → Application routes (Next.js App Router).
+- **features/** → Business features (Home, Auth, Pricing, Cases).
+- **components/** → Shared reusable components.
+- **lib/** → Utilities and application configuration.
+- **services/** → Shared API layer.
+- **hooks/** → Global custom hooks.
+- **types/** → Shared TypeScript types.
+- **constants/** → Shared constants and routes.
+- **assets/** → Images, icons, and fonts.
+
+This structure keeps the application scalable, maintainable, and easy to extend as new features are added.
