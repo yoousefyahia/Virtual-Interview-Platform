@@ -1,9 +1,9 @@
+import Signup1Page from '@/features/auth/signup/Signup1Page'
 
-import SignupPage from "@/features/signup/company/page";
-export default function Page() {
+function Signup() {
   return (
-    <>
-      <SignupPage />;
-    </>
-  );
+        <Signup1Page/>
+)
 }
+
+export default Signup

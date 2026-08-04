@@ -3,8 +3,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { AuthField, PrimaryButton } from "@/features/signup/components/AuthShell";
-import styles from "@/components/auth/auth.module.css";
+import { AuthField, PrimaryButton } from "@/features/auth/components/AuthShell";
+import styles from "@/features/auth/components/auth.module.css";
 import { useRouter } from "next/navigation";
 
 const schema = z
@@ -28,15 +28,15 @@ export function SignupAccountForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm<Values>({
     resolver: zodResolver(schema),
     defaultValues: { terms: false } as never,
   });
   const router = useRouter();
   function submit(_: Values) {
- /* (Backend): Call company account creation API here. */
-    router.push("/signup/company")
+    /* (Backend): Call company account creation API here. */
+    router.push("signup/signup2");
   }
   return (
     <form className={styles.form} noValidate onSubmit={handleSubmit(submit)}>
@@ -80,8 +80,8 @@ export function SignupAccountForm() {
         </select>
       </AuthField>
       <label className={styles.agreement}>
-        <input {...register("terms")} type="checkbox" />I agree to the Terms
-        & Privacy Policy 
+        <input {...register("terms")} type="checkbox" />I agree to the Terms &
+        Privacy Policy
       </label>
       <Error message={errors.terms?.message} />
       <PrimaryButton>Create Account　→</PrimaryButton>
