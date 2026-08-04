@@ -241,7 +241,7 @@
   --sidebar-ring: #155dfc;
 }
 @utility container {
-  width: min(1280px, calc(100% - 32px));
+  width: min(1200px, calc(100% - 32px));
   margin-inline: auto;
 }
 @utility transition-default {
@@ -395,6 +395,18 @@
   font-weight: 600;
   line-height: 150%;
 }
+@utility section {
+  padding-block: 96px;
+}
+@utility section-header {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+@utility card-default {
+  @apply rounded-corner-radius-m border border-border bg-card shadow-card transition-default;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
