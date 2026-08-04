@@ -10,7 +10,7 @@ src/
 │   ├── loading.tsx
 │   ├── not-found.tsx
 │   │
-│   ├── (public)/
+│   ├── (main)/
 │   │   ├── layout.tsx                 # Navbar + Footer
 │   │   ├── page.tsx                   # Home (/)
 │   │   │
