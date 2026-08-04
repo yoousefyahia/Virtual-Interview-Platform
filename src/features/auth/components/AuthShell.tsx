@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { AuthBrand } from "@/features/signup/components/AuthBrand";
+import { AuthBrand } from "./AuthBrand";
 import styles from "./auth.module.css";
-
+import image from "@/assets/images/Frame16.png"
 export function AuthHeader({
   title,
   signup = false,
@@ -10,9 +10,10 @@ export function AuthHeader({
   signup?: boolean;
 }) {
   return (
-    <header className={styles.header}>
+    <header
+      className={"flex justify-between text-lg sm:text-3xl font-bold p-8"}>
       <h1>{title}</h1>
-      {signup ? <strong>SignUp</strong> : <AuthBrand />}
+      {signup ? "SignUp" : <AuthBrand />}
     </header>
   );
 }
@@ -40,7 +41,7 @@ export function HiringPanel({ login = false }: { login?: boolean }) {
         </>
       ) : (
         <Image
-          src="/Frame%2016.png"
+          src={image}
           alt="Hire smarter, grow faster"
           fill
           priority

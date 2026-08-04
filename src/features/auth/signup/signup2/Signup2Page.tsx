@@ -5,9 +5,9 @@ import {
   AuthField,
   HiringPanel,
   PrimaryButton,
-} from "@/features/signup/components/AuthShell";
-import { SignupProgress } from "@/features/signup/components/SignupProgress";
-import styles from "@/features/signup/components/auth.module.css";
+} from "@/features/auth/components/AuthShell";
+import { SignupProgress } from "@/features/auth/components/SignupProgress";
+import styles from "@/features/auth/components/auth.module.css";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -27,26 +27,25 @@ const schema = z.object({
   location: z.string().min(2, "Please enter your location company"),
   phone: z.string().regex(phoneRegex, "Please enter a valid phone number"),
   website: z.string().url("Please enter your website url"),
-  logo: z
-    .instanceof(File, {
-      message: "please select logo",
-    })
+  logo: z.instanceof(File, {
+    message: "please select logo",
+  }),
 });
 
 type Values = z.infer<typeof schema>;
 
-export default function CompanyForm() {
+export default function Signup2Page() {
   const {
     register,
     formState: { errors },
     handleSubmit,
-    setValue
+    setValue,
   } = useForm<Values>({
     resolver: zodResolver(schema),
   });
   const router = useRouter();
   function submit(_: Values) {
-    router.push("complete");
+    router.push("signup3");
   }
 
   return (
@@ -92,11 +91,11 @@ export default function CompanyForm() {
             <AuthField label="Logo">
               <input
                 type="file"
-                onChange={(e)=>{
-                    const file = e.target.files?.[0]
-                    if(file){
-                    setValue("logo",file,{shouldValidate:true})
-                    }
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setValue("logo", file, { shouldValidate: true });
+                  }
                 }}
               />
             </AuthField>
