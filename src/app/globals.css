@@ -241,7 +241,7 @@
   --sidebar-ring: #155dfc;
 }
 @utility container {
-  width: min(1200px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 32px));
   margin-inline: auto;
 }
 @utility transition-default {
