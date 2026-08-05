@@ -59,13 +59,13 @@ export default function Navbar() {
       <div className="container flex h-20 items-center justify-around">
 
         {/* Logo */}
-        <Link href="/" className=" gap-3">
-          <Image
-            src={logo}
-            alt="VU Platform Logo"
-            className="h-12 w-auto"
-            priority
-          />
+      <Link href="/" className="flex items-center">    
+        <Image
+              src={logo}
+              alt="VU Platform Logo"
+              className="h-12 w-auto"
+              priority
+            />
         </Link>
 
         {/* Desktop Navigation */}
@@ -78,10 +78,10 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "rounded-md px-4 py-2 text-body transition-colors duration-200",
+                   "rounded-md px-4 py-2 text-sm font-medium transition-colors",
                     isActive(link.href)
-                      ? "font-semibold text-primary"
-                      : "text-muted-foreground hover:text-primary"
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {link.label}
@@ -94,7 +94,7 @@ export default function Navbar() {
         </NavigationMenu>
 
         {/* Right Side */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           {/* Desktop Controls */}
           <div className="hidden md:flex items-center gap-3">
             {/* Language */}
@@ -165,7 +165,7 @@ export default function Navbar() {
                           "flex items-center rounded-lg px-4 py-3 text-base font-medium transition-all",
                           isActive(link.href)
                             ? "bg-primary/10 text-primary font-semibold"
-                            : "text-muted-foreground hover:bg-muted/80 hover:text-primary"
+                            : "text-muted-foreground hover:bg-muted hover:text-foreground"
                         )}
                       />
                     }

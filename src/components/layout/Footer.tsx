@@ -73,7 +73,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background">        
+    <footer className="bg-background">
       <div className="container border-t border-primary py-10">
         <div className="flex flex-col gap-16 lg:flex-row lg:justify-between">
           {/* Logo */}
@@ -86,10 +86,10 @@ export default function Footer() {
           </Link>
 
           {/* Links */}
-          <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-10">
+          <div className="grid flex-1 grid-cols-2 gap-8 md:grid-cols-4 md:gap-10">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
-                <h4 className="mb-4 text-body-sm-semibold uppercase text-primary">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary">
                   {section.title}
                 </h4>
 
@@ -98,7 +98,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-body-sm text-muted-foreground transition-default hover:text-primary"
+                        className="text-sm text-muted-foreground transition-default hover:text-primary"
                       >
                         {link.label}
                       </Link>
@@ -110,19 +110,19 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="mb-4 text-body-sm-semibold uppercase text-primary">
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary">
                 Contact
               </h4>
 
               <a
                 href="mailto:info@vuplatform.com"
-                className="text-body-sm text-muted-foreground transition-default hover:text-primary break-all"
+                className="break-all text-sm text-muted-foreground transition-default hover:text-primary"
               >
                 INFO@VUPLATFORM.COM
               </a>
 
               <div className="mt-8">
-                <h4 className="mb-4 text-body-sm-semibold uppercase text-primary">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary">
                   Follow Us
                 </h4>
 
@@ -144,10 +144,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-          <div className="mt-14 flex justify-end gap-6 border-t border-primary pt-6 text-caption text-muted-foreground">   
-             <span>Egypt (EG)</span>
-              <span>© 2025 VU</span>
-            </div>
+        <div className="mt-14 flex justify-end gap-6 border-t border-primary pt-6 text-xs text-muted-foreground">
+          <span>Egypt (EG)</span>
+          <span>© 2025 VU</span>
+        </div>
       </div>
     </footer>
   );
