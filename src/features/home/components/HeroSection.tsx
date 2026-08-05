@@ -19,13 +19,13 @@ export default function HeroSection() {
 
       <div className="container relative z-10">
         <div className="relative mx-auto flex max-w-5xl flex-col items-center justify-start gap-6">
-          <div className="bg-primary-p rounded-corner-radius-xxl border-primary-p-25 flex h-16 w-130 max-w-full items-center gap-2 border-[0.8px] p-4 backdrop-blur-md">
-            <Sparkles className="size-6 shrink-0 text-primary" />
+            <div className="inline-flex h-16 max-w-full items-center justify-center gap-2 rounded-full border border-primary bg-primary-25 px-8">
+              <Sparkles className="size-6 text-primary" />
 
-            <div className="body-bold text-primary w-full text-center font-semibold">
-              Now with Real-Time Proctoring &amp; AI Evaluation
+              <p className="body-bold text-primary">
+                Now with Real-Time Proctoring &amp; AI Evaluation
+              </p>
             </div>
-          </div>
 
           <div className="flex justify-center self-stretch p-2.5">
             <h1 className="text-center text-6xl font-black leading-tight tracking-tight md:text-3xl lg:text-5xl">
