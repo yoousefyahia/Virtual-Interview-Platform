@@ -78,7 +78,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                   "rounded-md px-4 py-2 text-sm font-medium transition-colors",
+                   "rounded-md px-4 py-2 text-lg font-medium transition-colors",
                     isActive(link.href)
                       ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
