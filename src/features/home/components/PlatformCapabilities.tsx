@@ -67,11 +67,11 @@ export default function PlatformCapabilities() {
     <section className="section">
       <div className="container">
         <div className="section-header">
-          <h2 className="text-center text-4xl font-bold tracking-tight text-primary md:text-5xl">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-primary md:text-4xl">
             Platform Capabilities
           </h2>
 
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground text-sm">
             Everything you need for modern AI-powered technical interviews.
           </p>
         </div>
