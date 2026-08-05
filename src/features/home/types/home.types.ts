@@ -9,3 +9,12 @@ export interface HomeStateResponse {
   message: string;
   data: HomeStats;
 }
+
+export interface SubscriberRequest {
+  email: string;
+}
+
+export interface SubscriberResponse {
+  status: number;
+  message: string;
+}
