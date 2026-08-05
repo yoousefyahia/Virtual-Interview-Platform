@@ -26,34 +26,29 @@ export default function StatsSection() {
 
   return (
     <section className="container mb-8">
-      <div
-        className="rounded-2xl border border-border bg-card
-          px-6 py-6
-          sm:px-10
-          md:px-16
-          lg:px-28"
-      >
+      <div className="rounded-2xl border border-border bg-card px-6 py-6 sm:px-10 md:px-16 lg:px-28">
         {isLoading ? (
           <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4">
             {Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="animate-pulse text-center">
-                <div className="mx-auto h-6 w-20 rounded bg-neutral-200" />
-                <div className="mx-auto mt-2 h-4 w-24 rounded bg-neutral-100" />
+                <div className="mx-auto h-8 w-24 rounded-md bg-neutral-300" />
+                <div className="mx-auto mt-3 h-4 w-28 rounded-md bg-neutral-100" />
               </div>
             ))}
           </div>
         ) : isError ? (
-          <p className="text-center text-neutral-700">
-            Failed to load stats
+          <p className="text-center text-sm text-neutral-700">
+            Failed to load stats.
           </p>
         ) : (
           <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <h4 className="h4 text-neutral-1100">
+                <h3 className="text-2xl font-bold tracking-tight text-neutral-black">
                   {stat.value}
-                </h4>
-                <p className="caption mt-1 text-neutral-700">
+                </h3>
+
+                <p className="mt-2 text-sm text-neutral-700">
                   {stat.label}
                 </p>
               </div>
