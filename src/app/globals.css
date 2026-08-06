@@ -56,7 +56,7 @@
   --color-neutral-1100: var(--neutral-1100);
   --color-neutral-grey-700: var(--neutral-700);
   --color-neutral-grey-900: var(--neutral-900);
-  --color-neutral-gery-700: var(--neutral-700);
+  --color-neutral-grey-700: var(--neutral-700);
 
   --radius-corner-radius-m: 16px;
   --radius-corner-radius-xxl: 9999px;
@@ -98,7 +98,7 @@
   --radius: 10px;
 
   /* Background */
-  --background: #ffffff;
+  --background: #f4f4f5;
   --foreground: #0f172b;
 
   /* Surface */
@@ -109,7 +109,7 @@
   --popover-foreground: #0f172b;
 
   /* Primary */
-  --primary: #155dfc;
+  --primary: #1447E6;
   --primary-foreground: #ffffff;
 
   --primary-25: #bedbff;
@@ -161,7 +161,7 @@
   /* Sidebar */
   --sidebar: #ffffff;
   --sidebar-foreground: #0f172b;
-  --sidebar-primary: #155dfc;
+  --sidebar-primary: #1447E6;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f8f8f8;
   --sidebar-accent-foreground: #0f172b;
