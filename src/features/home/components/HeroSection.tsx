@@ -19,35 +19,35 @@ export default function HeroSection() {
 
       <div className="container relative z-10">
         <div className="relative mx-auto flex max-w-5xl flex-col items-center justify-start gap-6">
-          <div className="bg-primary-p rounded-corner-radius-xxl border-primary-p-25 flex h-16 w-130 max-w-full items-center gap-2 border-[0.8px] p-4 backdrop-blur-md">
-            <Sparkles className="size-6 shrink-0 text-primary-p-500" />
+            <div className="inline-flex h-16 max-w-full items-center justify-center gap-2 rounded-full border border-primary bg-primary-25 px-8">
+              <Sparkles className="size-6 text-primary" />
 
-            <div className="body-bold text-primary-p-500 w-full text-center font-semibold">
-              Now with Real-Time Proctoring &amp; AI Evaluation
+              <p className="body-bold text-primary">
+                Now with Real-Time Proctoring &amp; AI Evaluation
+              </p>
             </div>
-          </div>
 
           <div className="flex justify-center self-stretch p-2.5">
-            <h1 className="h1 text-center tracking-tight">
+            <h1 className="text-center text-6xl font-black leading-tight tracking-tight md:text-3xl lg:text-5xl">
               <span className="text-foreground">
                 Technical Interviews,
                 <br />
               </span>
 
-              <span className="text-primary-p-500">
+              <span className="text-primary">
                 Reimagined with AI
               </span>
             </h1>
           </div>
 
           <div className="flex justify-center self-stretch p-2.5">
-              <p className="text-neutral-gery-700 h5 max-w-full text-center">
-                Post job announcements, conduct AI-powered video interviews with
-                real-time body &amp;
-                <br />
-                eye tracking, and receive detailed candidate evaluations — all in one
-                platform.
-              </p>
+            <p className="max-w-3xl text-center text-lg leading-8 text-neutral-600 md:text-base">
+              Post job announcements, conduct AI-powered video interviews with
+              real-time body &amp;
+              <br />
+              eye tracking, and receive detailed candidate evaluations — all in one
+              platform.
+            </p>
           </div>
 
           <div className="flex gap-3">

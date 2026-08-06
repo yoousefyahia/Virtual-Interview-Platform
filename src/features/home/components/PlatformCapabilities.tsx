@@ -8,6 +8,7 @@ import {
   Target,
   Zap,
 } from "lucide-react";
+
 import { Card, CardContent } from "@/components/ui/card";
 
 const capabilities = [
@@ -16,7 +17,7 @@ const capabilities = [
     title: "AI-Generated Questions",
     description:
       "Dynamic question banks tailored to each role and seniority level.",
-    bg: "bg-primary-p-25",
+    bg: "bg-primary-25",
     color: "text-primary",
   },
   {
@@ -63,38 +64,40 @@ const capabilities = [
 
 export default function PlatformCapabilities() {
   return (
-<section className="section">   
-       <div className="container">
+    <section className="section">
+      <div className="container">
         <div className="section-header">
-              <h2 className="h2 text-primary">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-primary md:text-4xl">
             Platform Capabilities
           </h2>
 
-          <p className="body mt-4 text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground text-sm">
             Everything you need for modern AI-powered technical interviews.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-3">    
-              {capabilities.map((item) => {
+        <div className="mt-16 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {capabilities.map((item) => {
             const Icon = item.icon;
 
             return (
               <Card
                 key={item.title}
-                    className="card-default h-50 hover:-translate-y-1 hover:shadow-hover">
+                className="card-default h-52 hover:-translate-y-1 hover:shadow-hover"
+              >
                 <CardContent className="flex h-full flex-col p-6">
                   <div
-                    className={`flex size-14 items-center justify-center rounded-full ${item.bg}`}                  >
-                <Icon className={`size-6 ${item.color}`} />   
-               </div>
+                    className={`flex size-14 items-center justify-center rounded-full ${item.bg}`}
+                  >
+                    <Icon className={`size-6 ${item.color}`} />
+                  </div>
 
-                  <h3 className="body-lg-bold mt-5 text-neutral-1100">
+                  <h3 className="mt-5 text-xl font-semibold text-neutral-1100">
                     {item.title}
                   </h3>
 
-                        <p className="body-sm mt-3 leading-6 text-muted-foreground"> 
-                       {item.description}
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                    {item.description}
                   </p>
                 </CardContent>
               </Card>
