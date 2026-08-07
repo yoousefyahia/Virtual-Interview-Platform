@@ -8,7 +8,7 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const siteUrl = "https://vu-platform.vercel.app";
+const siteUrl = "https://vuplatformzikolaa.duckdns.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -119,7 +119,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
       <body className={`${inter.className} font-sans`}>
         <ReactQueryProvider>
           {children}
