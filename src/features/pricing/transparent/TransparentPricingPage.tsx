@@ -1,7 +1,7 @@
 ﻿import { ChevronDown } from "lucide-react";
 import { Check } from "lucide-react";
-function PricingPage() {
-  const plans = [
+import Link from "next/link";
+ export const plans = [
     {
       name: "Basic",
       price: "2K",
@@ -46,8 +46,7 @@ function PricingPage() {
       buttonVariant: "outline",
     },
   ];
-
-  const compareRows = [
+  export  const compareRows = [
     { label: "AI VIDEO INTERVIEWS", values: [true, true, true] },
     { label: "REAL-TIME PROCTORING", values: [true, true, true] },
     { label: "ADVANCED ANALYTICS", values: [true, true, true] },
@@ -57,6 +56,10 @@ function PricingPage() {
     { label: "DEDICATED SUPPORT", values: [false, true, true] },
   ];
 
+function TransparentPricingPage() {
+ 
+
+ 
   const faqs = [
     {
       question: "Can I switch plans later?",
@@ -120,17 +123,19 @@ function PricingPage() {
                 ))}
               </ul>
 
-              <button
-                type="button"
-                className={`mt-10 inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-lg font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                  plan.buttonVariant === "solid"
-                    ? "bg-primary text-white hover:bg-blue-800"
-                    : !isPremium
-                      ? "border-3 border-primary bg-white text-primary hover:bg-blue-50"
-                      : ""
-                }`}>
-                {plan.buttonText}
-              </button>
+          <Link href={`/pricing/transparent/confirm?plan=${plan.name.toLowerCase()}`}>
+                <button
+                  type="button"
+                  className={`mt-10 inline-flex w-full items-center justify-center rounded-2xl px-5 py-3 text-lg font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                    plan.buttonVariant === "solid"
+                      ? "bg-primary text-white hover:bg-blue-800"
+                      : !isPremium
+                        ? "border-3 border-primary bg-white text-primary hover:bg-blue-50"
+                        : ""
+                  }`}>
+                  {plan.buttonText}
+                </button>
+          </Link >
             </div>
           );
         })}
@@ -139,9 +144,9 @@ function PricingPage() {
       <section className="mt-16 overflow-hidden">
         <div className="grid gap-px text-center uppercase grid-cols-4 px-6 py-4  font-bold text-xl">
           <div className=" sm:col-span-1">Compare Plans</div>
-          <div className="">Basic</div>
-          <div className="">Premium</div>
-          <div className="">Enterprise</div>
+          <div>Basic</div>
+          <div>Premium</div>
+          <div>Enterprise</div>
         </div>
 
         <div className="divide-y gap-y-8">
@@ -195,4 +200,4 @@ function PricingPage() {
   );
 }
 
-export default PricingPage;
+export default TransparentPricingPage;
