@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { AuthField, PrimaryButton } from "@/features/auth/components/AuthShell";
-import styles from "@/features/auth/components/auth.module.css";
 import { useRouter } from "next/navigation";
 
 const schema = z
@@ -39,7 +38,10 @@ export function SignupAccountForm() {
     router.push("signup/signup2");
   }
   return (
-    <form className={styles.form} noValidate onSubmit={handleSubmit(submit)}>
+    <form
+      className="w-full max-w-[560px]"
+      noValidate
+      onSubmit={handleSubmit(submit)}>
       <AuthField label="Your Name">
         <input {...register("name")} placeholder="Enter your name" />
       </AuthField>
@@ -79,9 +81,13 @@ export function SignupAccountForm() {
           <option value="healthcare">Healthcare</option>
         </select>
       </AuthField>
-      <label className={styles.agreement}>
-        <input {...register("terms")} type="checkbox" />I agree to the Terms &
-        Privacy Policy
+      <label className="flex items-center justify-center gap-2 my-[15px] text-[#b6b6ba] text-[15px]">
+        <input
+          {...register("terms")}
+          type="checkbox"
+          className="w-[15px] h-[15px]"
+        />
+        I agree to the Terms & Privacy Policy
       </label>
       <Error message={errors.terms?.message} />
       <PrimaryButton>Create Account　→</PrimaryButton>
@@ -90,8 +96,6 @@ export function SignupAccountForm() {
 }
 function Error({ message }: { message?: string }) {
   return message ? (
-    <p style={{ color: "#c63232", fontSize: 13, margin: "-14px 0 12px" }}>
-      {message}
-    </p>
+    <p className="text-[#c63232] text-xs -mt-[14px] mb-3">{message}</p>
   ) : null;
 }

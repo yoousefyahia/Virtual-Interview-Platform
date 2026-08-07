@@ -41,7 +41,7 @@
   letter-spacing: -3px;
 }
 .card {
-  min-height: 595px;
+  max-height: 100vh;
   margin-top: 75px;
   padding: 112px 51px;
   border-radius: 33px;
@@ -58,8 +58,6 @@
 .hiringPanel {
   position: relative;
   overflow: hidden;
-  width: 466px;
-  height: 720px;
   border-radius: 20px;
   background: #111b72;
 }
@@ -73,14 +71,7 @@
   padding: 124px 80px 72px;
   background: linear-gradient(180deg, #090d5e 5%, #11196e 47%, #e8e9f0 100%);
 }
-.loginPanel:before {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(#a6b7ff 1px, transparent 1px);
-  background-size: 14px 14px;
-  opacity: 0.35;
-  content: "";
-}
+
 .loginPanel h2,
 .loginPanel .brand {
   position: relative;
