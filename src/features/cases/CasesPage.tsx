@@ -88,18 +88,18 @@ function CasesPage() {
     },
   ];
   return (
-    <div>
+    
       <main className="container">
-        <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="text-[#1447E6] font-bold h1 m-2">Success Stories</h1>
-          <p className="font-semibold text-xl text-neutral-700">
+        <div className="flex flex-col items-center justify-center text-center mt-10">
+          <h1 className="text-primary font-bold text-4xl sm:text-6xl m-2">Success Stories</h1>
+          <p className="font-semibold text-base sm:text-xl text-neutral-700">
             See how leading companies use VU to hire smarter.
           </p>
         </div>
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 mt-12.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 mt-12.5">
           {cards.map((i) => {
             return (
-              <Card
+              <Card 
                 key={i.title}
                 className="relative mx-auto w-full max-w-sm pt-0 hover:-translate-y-1 hover:shadow-hover">
                 <div className="absolute inset-0 z-30 aspect-video " />
@@ -109,25 +109,25 @@ function CasesPage() {
                   alt={i.title}
                 />
                 <CardHeader className="h-9/10">
-                  <div className="flex justify-between items-center mb-3">
-                    <CardTitle className="font-bold text-xl md:text-[28px]  text-[#5A5A5D]">
+                  <div className="flex justify-between items-center mb-3 ">
+                    <CardTitle className="font-bold sm:text-[28px]  text-[#5A5A5D]">
                       {i.title}
                     </CardTitle>
-                    <CardTitle className="text-sm md:text-base text-[#1447E6] bg-[#BEDBFF]  max-w-25 min-w-18 h-10 rounded-[16px] flex items-center justify-center p-2">
+                    <CardTitle className="text-sm sm:text-base text-primary bg-[#BEDBFF]  max-w-25 min-w-10 max-h-10  rounded-corner-radius-m flex items-center justify-center p-2">
                       {i.label}
                     </CardTitle>
                   </div>
-                  <CardDescription className="text-black text-base md:text-2xl font-bold">
+                  <CardDescription className="text-black sm:text-2xl font-bold">
                     {i.description}
                   </CardDescription>
-                  <CardContent className="p-0 font-medium text-xs md:text-base ">
+                  <CardContent className="p-0 font-medium text-xs md:text-base line-clamp-3">
                     {i.content}
                   </CardContent>
                 </CardHeader>
                 <CardFooter className="container flex items-end h-15">
                   <Link
                     href={""}
-                    className="w-full flex items-center text-[#1447E6] font-bold md:text-[18px] ">
+                    className="w-full flex items-center text-primary font-bold md:text-[18px] ">
                     Read Case Study
                     <ArrowRight className="ml-2" />
                   </Link>
@@ -137,20 +137,20 @@ function CasesPage() {
           })}
         </div>
 
-        <div className="w-full h-75 mb-15 ">
-          <Carousel className="w-full top-1/3 container">
-            <CarouselPrevious className="" />
+        <div className="w-full max-h-75  ">
+          <Carousel className="w-full m-4 container ">
+            <CarouselPrevious className="left-0 z-50" />
             <CarouselContent>
               {reviews.map((i) => (
                 <CarouselItem key={i.id}>
                   <div className="p-1">
                     <Card className="w-8/10 m-auto">
-                      <CardContent className="flex  aspect-auto items-center justify-center p-6 ">
-                        <h4 className="italic text-black/60 font-medium">
+                      <CardContent className="flex aspect-auto items-center justify-center p-3 ">
+                        <h6 className="italic text-black/60 font-medium text-xs sm:text-sm line-clamp-8">
                           {i.comment}
-                        </h4>
+                        </h6>
                       </CardContent>
-                      <CardFooter className="flex gap-3 container">
+                      <CardFooter className="flex gap-3 ">
                         <Avatar>
                           <AvatarImage src="img" alt="@shadcn" />
                           <AvatarFallback className="bg-linear-to-r from-chart-3 to-chart-1 text-white font-extralight text-sm">
@@ -158,8 +158,8 @@ function CasesPage() {
                           </AvatarFallback>
                         </Avatar>
                         <div>
-                          <h5 className="">{i.name}</h5>
-                          <p className="text-[#696666] text-sm">{i.position}</p>
+                          <h6 className="font-bold text-sm sm:text-base">{i.name}</h6>
+                          <p className="text-[#696666] text-xs  sm:text-sm">{i.position}</p>
                         </div>
                       </CardFooter>
                     </Card>
@@ -167,11 +167,10 @@ function CasesPage() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselNext />
+            <CarouselNext className="right-0 z-50" />
           </Carousel>
         </div>
       </main>
-    </div>
   );
 }
 

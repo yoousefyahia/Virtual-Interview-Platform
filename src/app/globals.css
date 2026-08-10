@@ -72,30 +72,55 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Brand */
---color-primary-25: var(--primary-25);
---color-primary-500: var(--primary-500);
---color-primary-900: var(--primary-900);
-/* semantic */
---color-green: var(--green);
---color-green-light: var(--green-light);
+  /* Neutral */
+  --color-neutral-white: #ffffff;
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-1000: var(--neutral-1000);
+  --color-neutral-1100: var(--neutral-1100);
+  --color-neutral-grey-700: var(--neutral-700);
+  --color-neutral-grey-900: var(--neutral-900);
+  --color-neutral-grey-700: var(--neutral-700);
 
---color-red: var(--red);
---color-red-light: var(--red-light);
+  --radius-corner-radius-m: 16px;
+  --radius-corner-radius-xxl: 9999px;
 
---color-orange: var(--orange);
---color-orange-light: var(--orange-light);
+  /* Semantic */
+  --color-green: var(--green);
+  --color-green-light: var(--green-light);
 
---color-purple: var(--purple);
---color-purple-light: var(--purple-light);
+  --color-red: var(--red);
+  --color-red-light: var(--red-light);
 
---color-turquoise: var(--turquoise);
---color-turquoise-light: var(--turquoise-light);
+  --color-orange: var(--orange);
+  --color-orange-light: var(--orange-light);
+
+  --color-purple: var(--purple);
+  --color-purple-light: var(--purple-light);
+
+  --color-turquoise: var(--turquoise);
+  --color-turquoise-light: var(--turquoise-light);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 :root {
   /* Fonts */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 
   /* Radius */
   --radius: 10px;
@@ -113,7 +138,7 @@
   --popover-foreground: #0f172b;
 
   /* Primary */
-  --primary: #1515d6;
+  --primary: #1447e6;
   --primary-foreground: #ffffff;
 
   /* Secondary */
@@ -184,7 +209,38 @@
   --turquoise: #169fc4;
   --turquoise-light: #e9fbfd;
 
-  /* Gradients */
+  /* UI */
+  --border: #d9d9d9;
+  --input: #d9d9d9;
+  --ring: #155dfc;
+
+  --secondary: #f8f8f8;
+  --secondary-foreground: #0f172b;
+
+  --muted: #f8f8f8;
+  --muted-foreground: #73738b;
+
+  --accent: #f8f8f8;
+  --accent-foreground: #0f172b;
+
+  --destructive: #f40009;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172b;
+  --sidebar-primary: #1447e6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f8f8f8;
+  --sidebar-accent-foreground: #0f172b;
+  --sidebar-border: #d9d9d9;
+  --sidebar-ring: #155dfc;
+
+  --chart-1: #155dfc;
+  --chart-2: #2b7fff;
+  --chart-3: #51a2ff;
+  --chart-4: #bedbff;
+  --chart-5: #0f172b;
+
   --gradient-primary: linear-gradient(
     90deg,
     #002f98 0%,
@@ -193,24 +249,11 @@
     #bedbff 100%
   );
 
-  --gradient-dark: linear-gradient(
-    90deg,
-    #2e3192,
-    #1c75bc
-  );
+  --gradient-dark: linear-gradient(90deg, #2e3192, #1c75bc);
 
-  --gradient-button: linear-gradient(
-    90deg,
-    #1e40af,
-    #2563eb
-  );
+  --gradient-button: linear-gradient(90deg, #1e40af, #2563eb);
 
-  --gradient-hero: linear-gradient(
-    90deg,
-    #2563eb,
-    #51a2ff,
-    #2b7fff
-  );
+  --gradient-hero: linear-gradient(90deg, #2563eb, #51a2ff, #2b7fff);
 }
 
 .dark {
@@ -287,6 +330,13 @@
   background-clip: text;
   color: transparent;
 }
+@utility shadow-hover {
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 20px 40px rgba(21, 93, 252, 0.18);
+}
+@utility shadow-primary {
+  box-shadow: 0 20px 40px rgba(21, 93, 252, 0.15);
+}
 
 @utility shadow-card {
   box-shadow: 0 10px 30px rgb(15 23 43 / 8%);
@@ -315,6 +365,16 @@
 
 @utility bg-hero-gradient {
   background: var(--gradient-hero);
+} /* ===========================
+   Typography
+=========================== */
+
+@utility h1 {
+  font-family: var(--font-sans);
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: 0;
 }
 
 @utility section {
@@ -344,5 +404,9 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+  }
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
   }
 }

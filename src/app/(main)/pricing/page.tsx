@@ -1,7 +1,9 @@
-import PricingPage from "@/features/pricing/PricingPage";
+import PricingPage from "@/features/pricing/PricingPage"
 
-export default function Pricing() {
+function Price() {
   return (
-   <PricingPage/>
-  );
+    <PricingPage/>
+  )
 }
+
+export default Price
