@@ -46,36 +46,14 @@ export default function Signup2Page() {
   }
 
   return (
-    <>
-      <style>{`
-        @media (max-width: 900px) {
-          .signup-page-card {
-            grid-template-columns: 1fr !important;
-            gap: 35px !important;
-            padding: 45px !important;
-          }
-          .signup-page-card .hiring-panel {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 466/720;
-            margin: 0 !important;
-          }
-        }
-        @media (max-width: 600px) {
-          .signup-page-card {
-            padding: 20px !important;
-          }
-        }
-      `}</style>
-      <main className="min-h-screen pt-8 px-7 pb-12 bg-white text-[#121212]">
+      <main className="min-h-screen bg-white px-4 pb-12 pt-4 text-[#121212] sm:px-7 sm:pt-8">
         <div className="w-[min(1202px,100%)] mx-auto">
           <AuthHeader title="Create Your Account" signup />
           <SignupProgress step={2} label="Company details" />
           <AuthCard
-            className="signup-page-card mt-[14px] px-[50px] py-[30px] pt-[54px] grid gap-[75px] max-w-none"
-            style={{ gridTemplateColumns: "560px 466px", minHeight: "948px" }}>
+            className="mt-[14px] grid max-w-none grid-cols-1 gap-8 px-5 py-[30px] pt-9 sm:px-8 sm:pt-[54px] md:gap-[35px] xl:min-h-[948px] xl:grid-cols-[minmax(0,560px)_minmax(0,466px)] xl:gap-[75px] xl:px-[50px]">
             <form
-              className="w-full max-w-[560px]"
+              className="w-full min-w-0 max-w-[560px] xl:max-w-none"
               noValidate
               onSubmit={handleSubmit(submit)}>
               <AuthField label="About Company">
@@ -120,10 +98,10 @@ export default function Signup2Page() {
                 />
               </AuthField>
               <Error message={errors.logo?.message} />
-              <div className="flex gap-[116px] mt-[14px]">
-                <Link href={"/signup"}>
+              <div className="mt-[14px] flex flex-col gap-4 sm:flex-row sm:gap-[116px]">
+                <Link className="w-full sm:w-[222px] sm:shrink-0" href={"/signup"}>
                   <button
-                    className="w-[222px] h-[72px] border border-[#d6d6d6] rounded-[20px] bg-transparent text-[#55565a] text-[20px] cursor-pointer transition-all hover:bg-[#dbdbdb]"
+                    className="h-[72px] w-full rounded-[20px] border border-[#d6d6d6] bg-transparent text-[20px] text-[#55565a] transition-colors hover:bg-[#dbdbdb]"
                     type="button">
                     Back
                   </button>
@@ -136,6 +114,5 @@ export default function Signup2Page() {
           </AuthCard>
         </div>
       </main>
-    </>
   );
 }

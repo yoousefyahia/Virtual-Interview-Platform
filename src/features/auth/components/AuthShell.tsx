@@ -3,10 +3,9 @@ import image from "@/assets/images/Frame16.png";
 
 export function AuthHeader({ title }: { title: string; signup?: boolean }) {
   return (
-    <header
-      className={"flex justify-between text-lg sm:text-3xl font-bold p-8"}>
-      <h1>{title}</h1>
-      SignUp
+    <header className="flex items-start justify-between gap-4 p-4 text-xl font-bold sm:p-8 sm:text-3xl">
+      <h1 className="min-w-0">{title}</h1>
+      <span className="shrink-0">SignUp</span>
     </header>
   );
 }
@@ -14,16 +13,13 @@ export function AuthHeader({ title }: { title: string; signup?: boolean }) {
 export function AuthCard({
   children,
   className = "",
-  style = {},
 }: {
   children: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
 }) {
   return (
     <section
-      className={`max-h-screen mt-[75px] px-[51px] py-[112px] rounded-[33px] bg-[#f6f6f6] shadow-[0_2px_2px_rgba(0,0,0,0.02)] ${className}`}
-      style={style}>
+      className={`mt-8 rounded-[24px] bg-[#f6f6f6] px-5 py-9 shadow-[0_2px_2px_rgba(0,0,0,0.02)] sm:mt-[75px] sm:rounded-[33px] sm:px-[51px] sm:py-[112px] ${className}`}>
       {children}
     </section>
   );
@@ -31,15 +27,12 @@ export function AuthCard({
 
 export function HiringPanel() {
   return (
-    <section
-      className={`relative overflow-hidden rounded-[20px] bg-[#111b72] hidden md:block`}>
+    <section className="relative hidden aspect-[466/720] w-full overflow-hidden rounded-[20px] md:block xl:aspect-auto">
       <Image
         src={image}
         alt="Hire smarter, grow faster"
         fill
-        priority
-        sizes="(max-width: 200px) 5y0vw, 200px"
-        className="hidden md:block "
+        className="object-cover"
       />
     </section>
   );
@@ -48,7 +41,7 @@ export function HiringPanel() {
 export function PrimaryButton({ children }: { children: React.ReactNode }) {
   return (
     <button
-      className="w-full h-[72px] border-0 rounded-[21px] bg-[#225df4] hover:bg-[#174cda] shadow-[0_3px_2px_rgba(0,0,0,0.03)] text-white text-[20px] cursor-pointer"
+      className="h-[72px] w-full rounded-[21px] border-0 bg-[#225df4] text-[20px] text-white shadow-[0_3px_2px_rgba(0,0,0,0.03)] transition-colors hover:bg-[#174cda]"
       type="submit">
       {children}
     </button>
@@ -63,45 +56,11 @@ export function AuthField({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <style>{`
-        .auth-field-input input,
-        .auth-field-input select,
-        .auth-field-input textarea {
-          width: 100%;
-          border: 1px solid #e5e5e5;
-          border-radius: 9999px;
-          background-color: white;
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
-          padding: 0 13px;
-          color: #52525a;
-          font-size: 16px;
-          font-weight: 400;
-          outline: none;
-        }
-
-        .auth-field-input input,
-        .auth-field-input select {
-          height: 56px;
-        }
-
-        .auth-field-input textarea {
-          height: 101px;
-          border-radius: 28px;
-          padding-top: 14px;
-          resize: vertical;
-        }
-
-        .auth-field-input input:focus,
-        .auth-field-input select:focus,
-        .auth-field-input textarea:focus {
-          border-color: #225df4;
-        }
-      `}</style>
-      <label className="block mb-5 text-[#5a5a5f] text-[25px] font-bold">
+    <label className="mb-5 block text-xl font-bold text-[#5a5a5f] sm:text-[25px]">
         <span className="block mb-[15px]">{label}</span>
-        <div className="auth-field-input">{children}</div>
+        <div className="[&_input]:h-14 [&_input]:w-full [&_input]:rounded-full [&_input]:border [&_input]:border-[#e5e5e5] [&_input]:bg-white [&_input]:px-[13px] [&_input]:text-base [&_input]:font-normal [&_input]:text-[#52525a] [&_input]:shadow-[0_1px_1px_rgba(0,0,0,0.02)] [&_input]:outline-none [&_input:focus]:border-[#225df4] [&_select]:h-14 [&_select]:w-full [&_select]:rounded-full [&_select]:border [&_select]:border-[#e5e5e5] [&_select]:bg-white [&_select]:px-[13px] [&_select]:text-base [&_select]:font-normal [&_select]:text-[#52525a] [&_select]:shadow-[0_1px_1px_rgba(0,0,0,0.02)] [&_select]:outline-none [&_select:focus]:border-[#225df4] [&_textarea]:h-[101px] [&_textarea]:w-full [&_textarea]:resize-y [&_textarea]:rounded-[28px] [&_textarea]:border [&_textarea]:border-[#e5e5e5] [&_textarea]:bg-white [&_textarea]:px-[13px] [&_textarea]:pt-[14px] [&_textarea]:text-base [&_textarea]:font-normal [&_textarea]:text-[#52525a] [&_textarea]:shadow-[0_1px_1px_rgba(0,0,0,0.02)] [&_textarea]:outline-none [&_textarea:focus]:border-[#225df4]">
+          {children}
+        </div>
       </label>
-    </>
   );
 }

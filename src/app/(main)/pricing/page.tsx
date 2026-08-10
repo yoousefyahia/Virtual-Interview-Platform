@@ -1,8 +1,8 @@
-import Transparent from "./transparent/page"
+import PricingPage from "@/features/pricing/PricingPage"
 
 function Price() {
   return (
-    <Transparent/>
+    <PricingPage/>
   )
 }
 

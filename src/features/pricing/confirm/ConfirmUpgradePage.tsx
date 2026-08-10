@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { plans } from "../transparent/TransparentPricingPage";
-import { compareRows } from "../transparent/TransparentPricingPage";
+import { plans } from "@/features/pricing/PricingPage";
+import { compareRows } from "@/features/pricing/PricingPage";
 
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 
@@ -131,7 +131,7 @@ async function ConfirmUpgradePage({ searchParams }: Props) {
 
         <div className="mt-6 w-full">
           <Link
-            href="/pricing/transparent/confirm/billing"
+            href="/pricing/confirm/billing"
             className="w-full text-center flex items-center justify-center hover:bg-blue-800 py-3 bg-primary text-white rounded-full text-sm ">
             Continue to Billing <ArrowRight />
           </Link>

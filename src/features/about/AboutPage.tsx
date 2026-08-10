@@ -60,8 +60,8 @@ function AboutPage() {
           alt=""
           priority
         />
-        <div className="absolute z-40 w-3/4 top-1/4 left-1/10">
-          <h1 className="text-secondary text-3xl sm:text-4xl md:text-5xl font-bold w-1/2 mb-4 ">
+        <div className="absolute z-40 w-3/4 top-10 sm:top-1/4 left-1/10">
+          <h1 className="text-secondary text-xl sm:text-4xl md:text-5xl font-bold w-1/2 mb-4 ">
             Building the future of fair and efficient hiring
           </h1>
           <p className="w-3/4 text-neutral-700 text-xs sm:text-sm md:text-base">
@@ -70,8 +70,8 @@ function AboutPage() {
           </p>
         </div>
       </div>
-      <main className="m-auto w-11/12">
-        <div className="flex items-center justify-around  bg-white/50 backdrop-blur-xs absolute border rounded-2xl border-neutral-300 -mt-35 h-25 w-11/12  ">
+      <main className="m-auto w-11/12 ">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white/50 backdrop-blur-xs border rounded-2xl border-neutral-300 -mt-15 m-auto max-h-35 w-11/12 p-3 ">
        {companyStates.map((i)=>{
         return(
           <div key={i.label}>
@@ -81,17 +81,17 @@ function AboutPage() {
         )
 })}
         </div>
-        <div className="bg-primary/5 rounded-2xl w-full h-60 mt-20 mb-15 flex items-center justify-center flex-col">
-    <h2 className="h2 text-[#1447E6] font-bold">Our Mission</h2>
-    <p className="w-9/12 font-medium text-center text-black/60">To revolutionize the hiring experience through ethical AI and technology, making in-
+        <div className="bg-primary/5 rounded-2xl w-full h-60 mt-15 mb-15 flex items-center justify-center flex-col">
+    <h2 className="text-xl sm:text-4xl text-primary mb-2 font-bold">Our Mission</h2>
+    <p className="w-9/12 font-medium text-center text-black/60 text-sm sm:text-xl">To revolutionize the hiring experience through ethical AI and technology, making in-
 terviews more accurate, transparent, and accessible for everyone.</p>
         </div>
         <div className="flex flex-col items-center justify-center mb-15">
-          <h2 className="h2 mb-5">Our Values</h2>
-        <div className="flex w-full justify-center">
+          <h2 className="text-xl sm:text-4xl font-bold mb-5">Our Values</h2>
+        <div className="grid grid-cols-2 w-full sm:grid-cols-4 gap-3">
           {Values.map((i)=>{
             return(
-              <div className="bg-white m-2 rounded-2xl w-1/5 p-2 " key={i.title}>
+              <div className="bg-white m-2 rounded-2xl p-2 w-full " key={i.title}>
                <div className="h-12.5 w-12.5 bg-primary/5 rounded-full flex justify-center"
 >
                  <Image 
