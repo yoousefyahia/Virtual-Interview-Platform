@@ -5,7 +5,7 @@ import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
 });
 
 const siteUrl = "https://vuplatformzikolaa.duckdns.org";
