@@ -4,7 +4,7 @@ import PlatformCapabilities from "@/features/home/components/PlatformCapabilitie
 import AudienceCards from "@/features/home/components/AudienceCards";
 import ProcessSection from "@/features/home/components/ProcessSection";
 
-export default function AboutPage() {
+export default function HomePage() {
   return (
     <>
       <HeroSection />
