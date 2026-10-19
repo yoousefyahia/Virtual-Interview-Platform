@@ -1,163 +1,82 @@
-https://www.figma.com/design/dqw7PSvbH5A8GF5DT5EQ0N/VU-Platform?node-id=65-2&t=36KUfy3ZOJfUx0E0-1
+# Virtual Interview Platform
 
-# Project Structure
+A modern web application that enables candidates and hiring teams to conduct simulated interviews, share interview recordings, and get actionable feedback. Built with **Next.js 14**, **TypeScript**, and a feature‑based architecture, the platform is scalable, maintainable, and ready for production.
 
-```text
+---
+
+##  Features
+- **Interview Scheduler** – Create, edit, and manage interview slots.
+- **Live Video & Audio** – Real‑time communication powered by WebRTC (future integration).
+- **Recording & Playback** – Store interview sessions and replay them later.
+- **Feedback System** – Interviewers can leave structured feedback and ratings.
+- **Responsive UI** – Mobile‑first design with reusable components.
+- **Stripe Integration** – Secure payment handling for premium plans.
+
+---
+
+## 🛠️ Tech Stack
+- **Framework**: Next.js 14 (App Router) 
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **State Management**: React Context + TanStack Query
+- **API**: Axios + custom service layer
+- **Authentication**: NextAuth (email/password & OAuth)
+---
+
+## 🚀 Getting Started
+### Prerequisites
+- Node.js **>= 18**
+- npm **>= 9** (or Yarn/PNPM)
+- A Stripe account for payment testing (optional)
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-org/virtual-interview-platform.git
+cd virtual-interview-platform
+
+# Install dependencies
+npm install
+```
+
+### Development
+```bash
+# Run the dev server
+npm run dev
+```
+Open <http://localhost:3000> in your browser.
+
+### Build for Production
+```bash
+npm run build   # Compile the app
+npm start       # Start the production server
+```
+
+---
+
+## 📂 Project Structure
+```
 src/
+├─ app/               # Next.js App Router – layout, pages, and route groups
+│   ├─ layout.tsx    # Global layout (fonts, providers)
+│   ├─ loading.tsx   # Global loading UI
+│   ├─ not-found.tsx # 404 page
+│   ├─ (main)/       # Public pages (home, about, pricing, cases)
+│   └─ (auth)/       # Authentication routes (login, signup, etc.)
 │
-├── app/
-│   ├── layout.tsx                     # Root Layout (globals, fonts, providers)
-│   ├── loading.tsx
-│   ├── not-found.tsx
-│   │
-│   ├── (main)/
-│   │   ├── layout.tsx                 # Navbar + Footer
-│   │   ├── page.tsx                   # Home (/)
-│   │   │
-│   │   ├── about/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── pricing/
-│   │   │   ├── page.tsx
-│   │   │   ├── confirm/
-│   │   │   │   └── page.tsx
-│   │   │   └── payment/
-│   │   │       └── page.tsx
-│   │   │
-│   │   └── cases/
-│   │       └── page.tsx
-│   │
-│   └── (auth)/
-│       ├── layout.tsx                 # without Navbar,Footer
-│       │
-│       └── auth/
-│           ├── login/
-│           │   └── page.tsx
-│           │
-│           ├── signup/
-│           │   ├── page.tsx
-│           │   ├── company/
-│           │   │   └── page.tsx
-│           │   └── complete/
-│           │       └── page.tsx
-│           │
-│           ├── forgot-password/
-│           │   └── page.tsx
-│           │
-│           ├── verify-email/
-│           │   └── page.tsx
-│           │
-│           └── reset-password/
-│               └── page.tsx
+├─ features/          # Feature‑based modules (home, auth, pricing, cases)
+│   ├─ home/          # Home page components, hooks, services
+│   ├─ auth/          # Auth flow components
+│   └─ pricing/       # Pricing, confirmation, payment pages
 │
-├── features/
-│   │
-│   ├── home/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── types/
-│   │   ├── constants/
-│   │   └── HomePage.tsx
-│   │
-│   ├── about/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── types/
-│   │   └── AboutPage.tsx
-│   │
-│   ├── pricing/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── validation/
-│   │   ├── types/
-│   │   ├── constants/
-│   │   ├── PricingPage.tsx
-│   │   ├── ConfirmUpgradePage.tsx
-│   │   └── PaymentPage.tsx
-│   │
-│   ├── auth/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── validation/
-│   │   ├── types/
-│   │   ├── constants/
-│   │   ├── login/
-│   │   ├── signup/
-│   │   ├── forgot-password/
-│   │   ├── verify-email/
-│   │   └── reset-password/
-│   │
-│   └── cases/
-│       ├── components/
-│       ├── hooks/
-│       ├── services/
-│       ├── types/
-│       ├── constants/
-│       └── CasesPage.tsx
-│
-├── components/
-│   ├── layout/
-│   │   ├── Navbar.tsx
-│   │   ├── Footer.tsx
-│   │   └── Container.tsx
-│   │
-│   ├── shared/
-│   │   ├── Loader.tsx
-│   │   ├── ErrorState.tsx
-│   │   └── EmptyState.tsx
-│   │
-│   └── ui/
-│       ├── button.tsx
-│       ├── input.tsx
-│       ├── card.tsx
-│       ├── dialog.tsx
-│       ├── dropdown-menu.tsx
-│       ├── navigation-menu.tsx
-│       ├── sheet.tsx
-│       ├── select.tsx
-│       ├── checkbox.tsx
-│       ├── textarea.tsx
-│       ├── separator.tsx
-│       ├── skeleton.tsx
-│       └── ...
-│
-├── lib/
-│   ├── axios.ts
-│   ├── query-client.ts
-│   ├── stripe.ts
-│   └── utils.ts
-│
-├── hooks/
-│   ├── useDebounce.ts
-│   ├── useMediaQuery.ts
-│   └── useLocalStorage.ts
-│
-├── services/
-│   ├── api.ts
-│   └── endpoints.ts
-│
-├── constants/
-│   ├── routes.ts
-│   ├── plans.ts
-│   └── index.ts
-│
-├── types/
-│   ├── api.ts
-│   ├── auth.ts
-│   ├── common.ts
-│   └── pricing.ts
-│
-├── assets/
-│   ├── fonts/
-│   ├── icons/
-│   └── images/
-│
-└── middleware.ts
-
+├─ components/        # Shared UI components (Navbar, Footer, UI kit)
+├─ lib/               # Utilities (axios instance, Stripe helpers)
+├─ services/          # API layer (endpoints, request wrappers)
+├─ hooks/             # Global custom React hooks
+├─ constants/         # Route definitions, static data
+├─ types/             # TypeScript type definitions
+└─ assets/            # Images, icons, fonts
+```
 
 ## Routing
 
@@ -199,3 +118,22 @@ The project follows a **Feature-Based Architecture**.
 - **assets/** → Images, icons, and fonts.
 
 This structure keeps the application scalable, maintainable, and easy to extend as new features are added.
+
+---
+
+## 🤝 Contributing
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b my-feature`).
+3. Commit your changes with clear messages.
+4. Open a Pull Request describing the changes.
+
+Please follow the existing code style and run tests before submitting.
+
+---
+
+## 📄 License
+This project is licensed under the **MIT License**.
+
+https://www.figma.com/design/dqw7PSvbH5A8GF5DT5EQ0N/VU-Platform?node-id=65-2&t=36KUfy3ZOJfUx0E0-1
+
+
